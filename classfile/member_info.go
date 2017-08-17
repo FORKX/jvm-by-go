@@ -19,11 +19,11 @@ func readMembers(reader *ClassReader, cp ConstantPool) []*MenberInfo {
 
 func readMember(reader *ClassReader, cp ConstantPool) *MenberInfo {
 	return &MenberInfo{
-		cp: cp
-		accessFlags:reader.readUint16()
-		nameIndex:reader.readUint16()
-		descriptionIndex:reader.readUint16()
-		attributes:readAttributes(reader,cp)
+		cp:               cp,
+		accessFlags:      reader.readUint16(),
+		nameIndex:        reader.readUint16(),
+		descriptionIndex: reader.readUint16(),
+		attributes:       readAttributes(reader, cp),
 	}
 }
 func (self *MenberInfo) AccessFlags() uint16 {
